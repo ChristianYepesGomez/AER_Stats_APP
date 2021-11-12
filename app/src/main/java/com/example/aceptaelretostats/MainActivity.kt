@@ -11,7 +11,7 @@ import com.example.aceptaelretostats.fragment.adapter.ViewPageAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
     lateinit var tabLayout: TabLayout
     lateinit var viewPager2: ViewPager2
@@ -67,5 +67,16 @@ class MainActivity : AppCompatActivity() {
             return super.onOptionsItemSelected(item)
         }
         return true
+    }
+
+    override fun onTabSelected(tab: TabLayout.Tab?) {
+    }
+
+    override fun onTabUnselected(tab: TabLayout.Tab?) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onTabReselected(tab: TabLayout.Tab?) {
+        TODO("Not yet implemented")
     }
 }
