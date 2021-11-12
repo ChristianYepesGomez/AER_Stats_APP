@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Acepta El Reto Stats</string>
+    <string name="institutions">Instituciones</string>
+    <string name="problems">Problemas</string>
+    <string name="users">Usuarios</string>
+    <string name="more">more</string>
+    <string name="content_description_more">contentDescriptionMore</string>
+    <string name="page_title">title</string>
+    <string name="name">Nombre</string>
+    <string name="solved_problems">Problemas Resueltos</string>
+</resources>
