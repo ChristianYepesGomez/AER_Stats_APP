@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 0 -> {
                     tab.text = "Usuarios"
                     tab.setIcon(R.drawable.ic_baseline_person_24)
+
                 }
                 1 -> {
                     tab.text = "Instituciones"

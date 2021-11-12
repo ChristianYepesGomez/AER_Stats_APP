@@ -13,28 +13,23 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:background="?attr/colorPrimary"
+            app:menu="@menu/top_app_bar"
+            app:title="@string/app_name"
+            app:titleCentered="true" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/paleta_azules_1">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar"
-                android:layout_width="match_parent"
-                android:layout_height="69dp"
-                app:menu="@menu/top_app_bar"
-                app:title="@string/app_name"
-                app:titleCentered="true" />
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tab_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/paleta_azules_1"
-                app:layout_scrollFlags="scroll|enterAlways"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-        </com.google.android.material.appbar.AppBarLayout>
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:tabBackground="?attr/colorPrimary"
+            app:tabSelectedTextColor="?attr/colorOnSecondary"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
         <androidx.viewpager2.widget.ViewPager2

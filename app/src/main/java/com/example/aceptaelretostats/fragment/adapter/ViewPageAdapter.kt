@@ -26,4 +26,5 @@ class ViewPageAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     override fun getItemCount(): Int {
         return 3
     }
+
 }
