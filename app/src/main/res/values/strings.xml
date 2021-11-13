@@ -8,4 +8,6 @@
     <string name="page_title">title</string>
     <string name="name">Nombre</string>
     <string name="solved_problems">Problemas Resueltos</string>
+    <string name="content_description_search">Buscar</string>
+    <string name="search">Buscar</string>
 </resources>

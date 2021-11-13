@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.example.aceptaelretostats.databinding.ActivityMainBinding
 import com.example.aceptaelretostats.fragment.adapter.ViewPageAdapter
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         createTabs()
+        val con = ConnectionDB.connection()
+
+//        val query = con?.createStatement()
+//        val r = query?.executeQuery("SELECT * FROM employees")
+//        print(r)
 
     }
 
@@ -51,7 +57,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.top_app_bar, menu)
+        menuInflater.inflate(R.menu.bottom_app_bar, menu)
         return true
     }
 
@@ -79,4 +85,5 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     override fun onTabReselected(tab: TabLayout.Tab?) {
         TODO("Not yet implemented")
     }
+
 }
