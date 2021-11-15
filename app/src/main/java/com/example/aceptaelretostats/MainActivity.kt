@@ -3,6 +3,7 @@ package com.example.aceptaelretostats
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -11,11 +12,14 @@ import com.example.aceptaelretostats.databinding.ActivityMainBinding
 import com.example.aceptaelretostats.fragment.adapter.ViewPageAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
     lateinit var tabLayout: TabLayout
     lateinit var viewPager2: ViewPager2
+    lateinit var users: Retrofit
     private lateinit var binding: ActivityMainBinding
     private val adapter = ViewPageAdapter(supportFragmentManager, lifecycle)
 
@@ -24,13 +28,16 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         createTabs()
-        val con = ConnectionDB.connection()
-
-//        val query = con?.createStatement()
-//        val r = query?.executeQuery("SELECT * FROM employees")
-//        print(r)
-
+        users = getRetrofit()
     }
+
+    private fun getRetrofit(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl("localhost:3000/getUsers")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
 
     fun createTabs() {
         tabLayout = binding.tabLayout
