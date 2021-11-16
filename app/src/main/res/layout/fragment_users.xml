@@ -8,6 +8,7 @@
     tools:context=".fragment.UsersFragment">
 
     <TableLayout
+        android:id="@+id/table_users"
         style="@style/Theme.AceptaElRetoStats"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

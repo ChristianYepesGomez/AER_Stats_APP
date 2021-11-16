@@ -11,17 +11,15 @@ import kotlinx.coroutines.launch
 import androidx.viewpager2.widget.ViewPager2
 import com.example.aceptaelretostats.databinding.ActivityMainBinding
 import com.example.aceptaelretostats.fragment.adapter.ViewPageAdapter
+import com.example.aceptaelretostats.services.UsersService
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import retrofit2.Call
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Url
 
 class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
-    private val url: String = "http://192.168.1.6:3000/getUsers/"
+    private var userUtils: RecursosAPI = RecursosAPI()
+
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager2: ViewPager2
     private lateinit var binding: ActivityMainBinding
@@ -32,29 +30,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         createTabs()
-        getUser();
     }
-
-    private fun getRetrofit(): Retrofit {
-
-        return Retrofit.Builder()
-            .baseUrl(url)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
-
-    private fun getUser() {
-        CoroutineScope(Dispatchers.IO).launch {
-            val call = getRetrofit().create(UsersService::class.java).getUsers(url)
-            val user = call.body()
-            if (call.isSuccessful) {
-                print(user);
-            } else {
-                //show error
-            }
-        }
-    }
-
 
     fun createTabs() {
         tabLayout = binding.tabLayout

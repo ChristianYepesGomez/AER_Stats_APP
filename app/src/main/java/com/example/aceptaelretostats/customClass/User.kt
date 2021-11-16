@@ -1,4 +1,4 @@
-package com.example.aceptaelretostats
+package com.example.aceptaelretostats.customClass
 
 import com.google.gson.annotations.SerializedName
 
