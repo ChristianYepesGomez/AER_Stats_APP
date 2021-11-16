@@ -1,5 +1,7 @@
 package com.example.aceptaelretostats
 
+import android.widget.Toast
+import com.example.aceptaelretostats.customClass.User
 import com.example.aceptaelretostats.services.UsersService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -15,23 +17,24 @@ class RecursosAPI {
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 
-    fun getUsers(query: String) {
+    fun getUsers(query: String): List<User>? {
+        var userList: List<User>? = null
 
         CoroutineScope(Dispatchers.IO).launch {
             val call = getRetrofit().create(UsersService::class.java).getUsers("$query/")
+            userList = call.body()!!
             println(call)
-            val userList = call.body()
             if (call.isSuccessful) {
-                println("------------------------------")
-                println("USUARIO" + userList?.get(0));
-                println("------------------------------")
+
 
             } else {
-                println(userList)
-                println("No se pudo establecer conexión")
+
+                println("Fallo de conexión con la api")
+
             }
 
         }
+        return userList
     }
 
     fun getProblems(query: String) {
