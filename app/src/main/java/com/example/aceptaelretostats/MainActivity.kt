@@ -5,21 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import androidx.viewpager2.widget.ViewPager2
 import com.example.aceptaelretostats.databinding.ActivityMainBinding
 import com.example.aceptaelretostats.fragment.adapter.ViewPageAdapter
-import com.example.aceptaelretostats.services.UsersService
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import com.example.aceptaelretostats.RecursosAPI.Companion.getUsers
 
 class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
-    private var userUtils: RecursosAPI = RecursosAPI()
-
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager2: ViewPager2
     private lateinit var binding: ActivityMainBinding
@@ -29,10 +22,11 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        getUsers("getUsers")
         createTabs()
     }
 
-    fun createTabs() {
+    private fun createTabs() {
         tabLayout = binding.tabLayout
         viewPager2 = binding.viewPager2
         viewPager2.adapter = adapter
@@ -85,5 +79,6 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     override fun onTabReselected(tab: TabLayout.Tab?) {
         TODO("Not yet implemented")
     }
+
 
 }
