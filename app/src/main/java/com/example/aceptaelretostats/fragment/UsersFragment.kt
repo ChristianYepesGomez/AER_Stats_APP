@@ -13,6 +13,9 @@ import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.aceptaelretostats.UsersListAdapter
 import com.example.mvvm.model.UserModel
 import com.example.mvvm.ui.viewmodel.UserViewModel
 
@@ -23,6 +26,7 @@ class UsersFragment : Fragment() {
     private var _binding: FragmentUsersBinding? = null
     private val binding get() = _binding!!
     private val userViewModel: UserViewModel by viewModels()
+    private var adapter: RecyclerView.Adapter<UsersListAdapter.MyViewHolder>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +39,17 @@ class UsersFragment : Fragment() {
 
         userViewModel.quoteModel.observe(this, Observer {
 
+
+            binding.idUserList.apply {
+                // set a LinearLayoutManager to handle Android
+                // RecyclerView behavior
+                layoutManager = LinearLayoutManager(activity)
+                // set the custom adapter to the RecyclerView
+                adapter = UsersListAdapter(it)
+            }
+//            binding.idUserList.layoutManager = LinearLayoutManager()
+//            binding.idUserList.adapter = UsersListAdapter(it)
+//            binding.idUserList.setHasFixedSize(true)
             //val tableUsers = binding.tableUsers
 
 //            for (user in it) {
@@ -54,11 +69,13 @@ class UsersFragment : Fragment() {
         userViewModel.isLoading.observe(this, Observer {
             binding.loading.isVisible = it
         })
+
+
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
 
     }
 
