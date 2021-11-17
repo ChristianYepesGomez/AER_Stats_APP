@@ -12,10 +12,12 @@ import android.widget.TableRow
 import android.widget.TextView
 
 class UsersFragment : Fragment() {
-    private val usuarios: Users = Users()
+
     private lateinit var tableUsers: TableLayout
+
     private var _binding: FragmentUsersBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,7 +32,6 @@ class UsersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
-        println("Usuarios fragment" + usuarios)
         val tableUsers = binding.tableUsers
         var tr = TableRow(activity)
         var tv1 = TextView(activity)
