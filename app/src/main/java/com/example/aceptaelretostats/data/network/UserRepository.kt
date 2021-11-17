@@ -8,8 +8,9 @@ class UserRepository {
     private val api = UserService()
 
     suspend fun getAllUsers(): List<UserModel> {
-        val response = api.getQuotes()
-        UserProvider.quotes = response
+        val response = api.getUsers()
+        UserProvider.listUsers = response
+        println(response)
         return response
     }
 }

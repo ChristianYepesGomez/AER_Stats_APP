@@ -10,6 +10,6 @@ data class UserModel(
 
 class UserProvider {
     companion object {
-        var quotes: List<UserModel> = emptyList()
+        var listUsers: List<UserModel> = emptyList()
     }
 }

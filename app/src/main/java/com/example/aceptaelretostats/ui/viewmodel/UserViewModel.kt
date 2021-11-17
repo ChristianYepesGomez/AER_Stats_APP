@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class UserViewModel : ViewModel() {
 
-    val quoteModel = MutableLiveData<UserModel>()
+    val quoteModel = MutableLiveData<List<UserModel>>()
     var getUsersUseCase = GetUsersUseCase()
     val isLoading = MutableLiveData<Boolean>()
 
@@ -17,9 +17,8 @@ class UserViewModel : ViewModel() {
         viewModelScope.launch {
             isLoading.postValue(true)
             val result = getUsersUseCase()
-
             if (!result.isNullOrEmpty()) {
-                quoteModel.postValue(result[0])
+                quoteModel.postValue(result!!)
                 isLoading.postValue(false)
             }
         }

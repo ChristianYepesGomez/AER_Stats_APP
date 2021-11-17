@@ -18,28 +18,31 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 
 class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
+
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager2: ViewPager2
     private lateinit var binding: ActivityMainBinding
     private val adapter = ViewPageAdapter(supportFragmentManager, lifecycle)
-    private val userViewModel: UserViewModel by viewModels()
+
+    //private val userViewModel: UserViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        userViewModel.onCreate()
+        //userViewModel.onCreate()
 
-        userViewModel.quoteModel.observe(this, Observer {
-            println(it.id)
-            //binding.tvQuote.text = it.quote
-            //binding.tvAuthor.text = it.author
-        })
-        userViewModel.isLoading.observe(this, Observer {
-            binding.loading.isVisible = it
-        })
+        //userViewModel.quoteModel.observe(this, Observer {
+        //println(it.id)
+        //binding.tvQuote.text = it.quote
+        //binding.tvAuthor.text = it.author
+        //})
+        //userViewModel.isLoading.observe(this, Observer {
+        //    binding.loading.isVisible = it
+        //})
 
-        //createTabs()
+        createTabs()
     }
 
     private fun createTabs() {
@@ -66,7 +69,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         }.attach()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.bottom_app_bar, menu)
         return true
     }

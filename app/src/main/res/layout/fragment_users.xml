@@ -7,26 +7,33 @@
     android:layout_height="match_parent"
     tools:context=".fragment.UsersFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recylerViewUsers"
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="425dp"
+        android:layout_height="159dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TableLayout
+        android:id="@+id/table_users"
+        style="@style/Theme.AceptaElRetoStats"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TableLayout
-            android:id="@+id/table_users"
-            style="@style/Theme.AceptaElRetoStats"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
-        </TableLayout>
-    </androidx.recyclerview.widget.RecyclerView>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>

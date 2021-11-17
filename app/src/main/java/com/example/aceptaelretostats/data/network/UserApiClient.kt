@@ -9,15 +9,16 @@ import retrofit2.http.GET
 
 interface QuoteApiClient {
     @GET("/getUsers")
-    suspend fun getAllQuotes(): Response<List<UserModel>>
+    suspend fun getAllUsers(): Response<List<UserModel>>
 }
 
 class UserService {
     private val retrofit = RetrofitHelper.getRetrofit()
 
-    suspend fun getQuotes(): List<UserModel> {
+    suspend fun getUsers(): List<UserModel> {
         return withContext(Dispatchers.IO) {
-            val response = retrofit.create(QuoteApiClient::class.java).getAllQuotes()
+            val response = retrofit.create(QuoteApiClient::class.java).getAllUsers()
+            println(response)
             response.body() ?: emptyList()
         }
     }
