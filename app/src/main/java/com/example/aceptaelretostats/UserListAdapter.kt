@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.aceptaelretostats.model.StatsModel
 
 
-class StatsListAdapter(private var statsList: StatsModel) :
-    RecyclerView.Adapter<StatsListAdapter.MyViewHolder>() {
+class UserListAdapter(private var statsList: StatsModel) :
+    RecyclerView.Adapter<UserListAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -22,7 +22,6 @@ class StatsListAdapter(private var statsList: StatsModel) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = statsList.users[position]
-
         holder.campoAccepteds.text = currentItem.accepteds
         holder.campoInstitucion.text = currentItem.resolved
         holder.campoNombreUsuario.text = currentItem.nick

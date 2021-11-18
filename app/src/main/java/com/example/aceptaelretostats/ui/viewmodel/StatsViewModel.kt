@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 class StatsViewModel : ViewModel() {
 
-    val quoteModel = MutableLiveData<List<StatsModel>>()
+    val statsModel = MutableLiveData<StatsModel>()
     var getStatsUseCase = GetStatsUseCase()
     val isLoading = MutableLiveData<Boolean>()
 
@@ -17,10 +17,10 @@ class StatsViewModel : ViewModel() {
         viewModelScope.launch {
             isLoading.postValue(true)
             val result = getStatsUseCase()
-            if (!result.isNullOrEmpty()) {
-                quoteModel.postValue(result!!)
-                isLoading.postValue(false)
-            }
+            
+            statsModel.postValue(result!!)
+            isLoading.postValue(false)
+
         }
     }
 }

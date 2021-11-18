@@ -1,25 +1,24 @@
-package com.example.mvvm.data.network
+package com.example.aceptaelretostats.data.network
 
-import com.example.mvvm.core.RetrofitHelper
-import com.example.mvvm.model.UserModel
+import com.example.aceptaelretostats.core.RetrofitHelper
+import com.example.aceptaelretostats.model.StatsModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
 import retrofit2.http.GET
 
-interface QuoteApiClient {
-    @GET("/getUsers")
-    suspend fun getAllUsers(): Response<List<UserModel>>
+interface StatsApiClient {
+    @GET("/.json")
+    suspend fun getAllStats(): Response<StatsModel>
 }
 
-class UserService {
+class StatsService {
     private val retrofit = RetrofitHelper.getRetrofit()
 
-    suspend fun getUsers(): List<UserModel> {
+    suspend fun getStats(): StatsModel {
         return withContext(Dispatchers.IO) {
-            val response = retrofit.create(QuoteApiClient::class.java).getAllUsers()
-            println(response)
-            response.body() ?: emptyList()
+            val response = retrofit.create(StatsApiClient::class.java).getAllStats()
+            response.body()!!
         }
     }
 

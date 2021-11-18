@@ -5,38 +5,37 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.aceptaelretostats.model.StatsModel
+import com.example.aceptaelretostats.model.Problems
 
 
-class UserListAdapter(private var statsList: StatsModel) :
-    RecyclerView.Adapter<UserListAdapter.MyViewHolder>() {
+class ProblemListAdapter(private var problems: List<Problems>) :
+    RecyclerView.Adapter<ProblemListAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
-            R.layout.list_user,
+            R.layout.list_problems,
             parent, false
         )
         return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = statsList.users[position]
-
+        val currentItem = problems[position]
         holder.campoAccepteds.text = currentItem.accepteds
-        holder.campoInstitucion.text = currentItem.resolved
-        holder.campoNombreUsuario.text = currentItem.nick
+        holder.campoId.text = currentItem.id
+        holder.campoNombreProblema.text = currentItem.name
     }
 
     override fun getItemCount(): Int {
-        return statsList.users.size
+        return problems.size
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val campoNombreUsuario: TextView = itemView.findViewById(R.id.id_user_name)
-        val campoInstitucion: TextView = itemView.findViewById(R.id.id_institution)
-        val campoAccepteds: TextView = itemView.findViewById(R.id.id_accepteds)
+        val campoNombreProblema: TextView = itemView.findViewById(R.id.id_name_problem)
+        val campoId: TextView = itemView.findViewById(R.id.id_problem)
+        val campoAccepteds: TextView = itemView.findViewById(R.id.id_accepteds_problem)
     }
 
 }

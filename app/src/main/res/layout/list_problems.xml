@@ -15,14 +15,14 @@
 
         <!--text view for displaying symbol-->
         <TextView
-            android:id="@+id/id_user_name"
+            android:id="@+id/id_name_problem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="2dp"
             android:layout_marginBottom="2dp"
-            android:layout_toStartOf="@id/id_accepteds"
+            android:layout_toStartOf="@id/id_problem"
             android:padding="3dp"
             android:text="Symbol"
             android:textColor="@color/primary_dark"
@@ -30,10 +30,10 @@
 
         <!--text view for displaying currency name-->
         <TextView
-            android:id="@+id/id_institution"
+            android:id="@+id/id_accepteds_problem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/id_user_name"
+            android:layout_below="@id/id_name_problem"
             android:layout_margin="2dp"
             android:padding="3dp"
             android:text="Name"
@@ -42,7 +42,7 @@
 
         <!--text view for displaying currency rate-->
         <TextView
-            android:id="@+id/id_accepteds"
+            android:id="@+id/id_problem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"

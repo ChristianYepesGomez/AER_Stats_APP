@@ -1,16 +1,15 @@
-package com.example.mvvm.data.network
+package com.example.aceptaelretostats.data.network
 
-import com.example.mvvm.model.UserModel
-import com.example.aceptaelretostats.model.UserProvider
+import com.example.aceptaelretostats.model.StatsModel
+import com.example.aceptaelretostats.model.StatsProvider
 
-class UserRepository {
+class StatsRepository {
 
-    private val api = UserService()
+    private val api = StatsService()
 
-    suspend fun getAllStats(): List<UserModel> {
-        val response = api.getUsers()
-        UserProvider.listUsers = response
-        println(response)
+    suspend fun getAllStats(): StatsModel {
+        val response = api.getStats()
+        StatsProvider.stats = response
         return response
     }
 }

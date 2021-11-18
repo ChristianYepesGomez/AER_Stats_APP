@@ -1,12 +1,12 @@
 package com.example.aceptaelretostats.domain
 
-import com.example.aceptaelretostats.data.network.UserRepository
+import com.example.aceptaelretostats.data.network.StatsRepository
 import com.example.aceptaelretostats.model.StatsModel
 
-class GetUsersUseCase {
+class GetStatsUseCase {
 
-    private val repository = UserRepository()
+    private val repository = StatsRepository()
 
-    suspend operator fun invoke(): List<UserModel>? = repository.getAllUsers()
+    suspend operator fun invoke(): StatsModel? = repository.getAllStats()
 
 }

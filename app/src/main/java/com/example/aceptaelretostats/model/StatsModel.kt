@@ -1,6 +1,11 @@
-package com.example.mvvm.model
+package com.example.aceptaelretostats.model
 
-data class UserModel(
+data class StatsModel(
+    val users: List<Users>,
+    val problems: List<Problems>
+)
+
+data class Users(
     val id: String,
     val nick: String,
     val accepteds: String,
@@ -8,8 +13,15 @@ data class UserModel(
     val resolved: String
 )
 
-class UserProvider {
+data class Problems(
+    val id: String,
+    val name: String,
+    val accepteds: String,
+    val shipments: String,
+)
+
+class StatsProvider {
     companion object {
-        var listUsers: List<UserModel> = emptyList()
+        lateinit var stats: StatsModel
     }
 }
