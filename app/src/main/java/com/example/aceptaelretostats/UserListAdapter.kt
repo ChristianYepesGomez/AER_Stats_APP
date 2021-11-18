@@ -5,12 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mvvm.model.UserModel
-import java.util.ArrayList
+import com.example.aceptaelretostats.model.StatsModel
 
 
-class UsersListAdapter(private var userList: List<UserModel>) :
-    RecyclerView.Adapter<UsersListAdapter.MyViewHolder>() {
+class StatsListAdapter(private var statsList: StatsModel) :
+    RecyclerView.Adapter<StatsListAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -22,14 +21,15 @@ class UsersListAdapter(private var userList: List<UserModel>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val currentItem = userList[position]
+        val currentItem = statsList.users[position]
+
         holder.campoAccepteds.text = currentItem.accepteds
         holder.campoInstitucion.text = currentItem.resolved
         holder.campoNombreUsuario.text = currentItem.nick
     }
 
     override fun getItemCount(): Int {
-        return userList.size
+        return statsList.users.size
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -38,5 +38,5 @@ class UsersListAdapter(private var userList: List<UserModel>) :
         val campoInstitucion: TextView = itemView.findViewById(R.id.id_institution)
         val campoAccepteds: TextView = itemView.findViewById(R.id.id_accepteds)
     }
-    
+
 }
