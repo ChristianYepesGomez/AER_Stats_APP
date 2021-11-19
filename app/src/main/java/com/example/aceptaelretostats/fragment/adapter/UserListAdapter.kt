@@ -1,10 +1,11 @@
-package com.example.aceptaelretostats
+package com.example.aceptaelretostats.fragment.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aceptaelretostats.R
 import com.example.aceptaelretostats.model.StatsModel
 
 

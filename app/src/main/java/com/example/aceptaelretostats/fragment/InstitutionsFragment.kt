@@ -9,7 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.aceptaelretostats.InstitutionsListAdapter
+import com.example.aceptaelretostats.fragment.adapter.InstitutionsListAdapter
 import com.example.aceptaelretostats.databinding.FragmentInstitutionsBinding
 import com.example.mvvm.ui.viewmodel.StatsViewModel
 
