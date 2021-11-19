@@ -9,13 +9,12 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.aceptaelretostats.R
-import com.example.aceptaelretostats.UserListAdapter
-import com.example.aceptaelretostats.databinding.FragmentUsersBinding
+import com.example.aceptaelretostats.InstitutionsListAdapter
+import com.example.aceptaelretostats.databinding.FragmentInstitutionsBinding
 import com.example.mvvm.ui.viewmodel.StatsViewModel
 
 class InstitutionsFragment : Fragment() {
-    private var _binding: FragmentUsersBinding? = null
+    private var _binding: FragmentInstitutionsBinding? = null
     private val binding get() = _binding!!
     private val statsViewModel: StatsViewModel by viewModels()
 
@@ -24,19 +23,19 @@ class InstitutionsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentUsersBinding.inflate(inflater, container, false)
+        _binding = FragmentInstitutionsBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
         statsViewModel.onCreate()
 
         statsViewModel.statsModel.observe(this, Observer {
 
 
-            binding.idUserList.apply {
+            binding.idInstitutionList.apply {
                 // set a LinearLayoutManager to handle Android
                 // RecyclerView behavior
                 layoutManager = LinearLayoutManager(activity)
                 // set the custom adapter to the RecyclerView
-                adapter = UserListAdapter(it)
+                adapter = InstitutionsListAdapter(it.institution)
             }
 
         })

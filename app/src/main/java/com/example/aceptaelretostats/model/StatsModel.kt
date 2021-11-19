@@ -2,7 +2,8 @@ package com.example.aceptaelretostats.model
 
 data class StatsModel(
     val users: List<Users>,
-    val problems: List<Problems>
+    val problems: List<Problems>,
+    val institution: List<Institutions>
 )
 
 data class Users(
@@ -18,6 +19,10 @@ data class Problems(
     val name: String,
     val accepteds: String,
     val shipments: String,
+)
+
+data class Institutions(
+    val institution: String,
 )
 
 class StatsProvider {

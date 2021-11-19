@@ -7,9 +7,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitHelper {
     fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://192.168.1.31:3000/")
+            .baseUrl("http://ec2-13-38-34-187.eu-west-3.compute.amazonaws.com:3000/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-        
+
     }
 }
