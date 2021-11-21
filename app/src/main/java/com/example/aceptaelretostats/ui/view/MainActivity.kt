@@ -5,12 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.example.aceptaelretostats.R
 import com.example.aceptaelretostats.databinding.ActivityMainBinding
 import com.example.aceptaelretostats.fragment.adapter.ViewPageAdapter
+import com.example.mvvm.ui.viewmodel.StatsViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlin.concurrent.thread
 
 
 class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
@@ -19,13 +23,26 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
     private lateinit var viewPager2: ViewPager2
     private lateinit var binding: ActivityMainBinding
     private val adapter = ViewPageAdapter(supportFragmentManager, lifecycle)
-    
+    private val statsViewModel: StatsViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         createTabs()
+
+        thread {
+            while (true) {
+                try {
+                    Thread.sleep(50000)
+                    println("funciono")
+                    statsViewModel.onCreate()
+                } catch (err: Exception) {
+                    err.printStackTrace()
+                }
+            }
+        }
     }
 
     private fun createTabs() {
