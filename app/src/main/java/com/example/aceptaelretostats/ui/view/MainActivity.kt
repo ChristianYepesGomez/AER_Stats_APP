@@ -43,6 +43,8 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
                 }
             }
         }
+
+
     }
 
     private fun createTabs() {

@@ -9,7 +9,7 @@ class StatsRepository {
 
     suspend fun getAllStats(): StatsModel {
         val response = api.getStats()
-        println(response.institution)
+        
         StatsProvider.stats = response
         return response
     }
