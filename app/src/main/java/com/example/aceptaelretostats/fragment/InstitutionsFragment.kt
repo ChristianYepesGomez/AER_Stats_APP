@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aceptaelretostats.fragment.adapter.InstitutionsListAdapter
 import com.example.aceptaelretostats.databinding.FragmentInstitutionsBinding
-import com.example.mvvm.ui.viewmodel.StatsViewModel
+import com.example.aceptaelretostats.ui.viewmodel.StatsViewModel
 
 class InstitutionsFragment : Fragment() {
     private var _binding: FragmentInstitutionsBinding? = null

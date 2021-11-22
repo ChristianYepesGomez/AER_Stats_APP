@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.example.aceptaelretostats.R
 import com.example.aceptaelretostats.databinding.ActivityMainBinding
 import com.example.aceptaelretostats.fragment.adapter.ViewPageAdapter
-import com.example.mvvm.ui.viewmodel.StatsViewModel
+import com.example.aceptaelretostats.ui.viewmodel.StatsViewModel
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlin.concurrent.thread

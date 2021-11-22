@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aceptaelretostats.fragment.adapter.ProblemListAdapter
 import com.example.aceptaelretostats.databinding.FragmentProblemsBinding
-import com.example.mvvm.ui.viewmodel.StatsViewModel
+import com.example.aceptaelretostats.ui.viewmodel.StatsViewModel
 
 class ProblemsFragment : Fragment() {
     private var _binding: FragmentProblemsBinding? = null

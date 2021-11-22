@@ -10,8 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aceptaelretostats.fragment.adapter.UserListAdapter
 import com.example.aceptaelretostats.databinding.FragmentUsersBinding
-import com.example.aceptaelretostats.model.Users
-import com.example.mvvm.ui.viewmodel.StatsViewModel
+import com.example.aceptaelretostats.ui.viewmodel.StatsViewModel
 
 
 class UsersFragment : Fragment() {
@@ -19,7 +18,7 @@ class UsersFragment : Fragment() {
     private var _binding: FragmentUsersBinding? = null
     private val binding get() = _binding!!
     private val statsViewModel: StatsViewModel by viewModels()
-    
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,12 +38,11 @@ class UsersFragment : Fragment() {
                 // set the custom adapter to the RecyclerView
 
                 adapter = UserListAdapter(it.users)
-                userAdapter = UserListAdapter(it.users)
 
             }
 
         })
-        println(userAdapter)
+
         binding.idBuscarUsuarios.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -52,7 +50,7 @@ class UsersFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                userAdapter.filter.filter(newText)
+
                 return false
             }
 
