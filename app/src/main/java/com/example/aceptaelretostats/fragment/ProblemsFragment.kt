@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -36,7 +37,26 @@ class ProblemsFragment : Fragment() {
                 layoutManager = LinearLayoutManager(activity)
                 // set the custom adapter to the RecyclerView
                 adapter =
-                    ProblemListAdapter(it.problems.sortedByDescending { it.accepteds.toInt() })
+                    ProblemListAdapter(it.problems)
+            }
+
+        })
+
+        statsViewModel.isLoading.observe(this, Observer {
+            binding.loading.isVisible = it
+        })
+
+        binding.idBuscarProblemas.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    statsViewModel.getProblemsFilteredBy(newText)
+                }
+                return false
             }
 
         })

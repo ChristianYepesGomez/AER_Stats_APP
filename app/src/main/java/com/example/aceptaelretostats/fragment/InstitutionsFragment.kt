@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -44,6 +45,25 @@ class InstitutionsFragment : Fragment() {
             binding.loading.isVisible = it
         })
 
+        binding.idBuscarInstituciones.setOnQueryTextListener(object :
+            SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    statsViewModel.getInstitutionsFilteredBy(newText)
+                }
+                return false
+            }
+
+        })
+
+        statsViewModel.isLoading.observe(this, Observer {
+            binding.loading.isVisible = it
+        })
 
 
         return binding.root

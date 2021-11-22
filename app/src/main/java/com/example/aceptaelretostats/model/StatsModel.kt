@@ -1,11 +1,10 @@
 package com.example.aceptaelretostats.model
 
-import androidx.lifecycle.MutableLiveData
 
 data class StatsModel(
     var users: MutableList<Users>,
-    val problems: MutableList<Problems>,
-    val institution: MutableList<Institutions>
+    var problems: MutableList<Problems>,
+    var institution: MutableList<Institutions>
 )
 
 data class Users(

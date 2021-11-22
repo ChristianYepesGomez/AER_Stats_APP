@@ -17,23 +17,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-                        <androidx.appcompat.widget.SearchView
-                            android:id="@+id/id_buscar_usuarios"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/design_default_color_primary"
-                            android:textCursorDrawable="@null"
-                            app:iconifiedByDefault="true"
-                            app:queryBackground="@null" />
-            <!--            <EditText-->
-            <!--                android:id="@+id/id_buscar_usuarios"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_margin="8dp"-->
-            <!--                android:focusable="auto"-->
-            <!--                android:hint="Buscar Usuario"-->
-            <!--                android:textColor="@color/primary_dark"-->
-            <!--                android:textColorHint="@color/primary" />-->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/id_buscar_usuarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textCursorDrawable="@null"
+                app:iconifiedByDefault="true"
+                app:queryBackground="@null"
+                app:queryHint="¿Buscas un usuario?" />
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/id_user_list"

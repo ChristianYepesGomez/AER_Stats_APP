@@ -19,6 +19,7 @@ class UserListAdapter(private var userList: MutableList<Users>) :
     RecyclerView.Adapter<UserListAdapter.MyViewHolder>(), Filterable {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        userList.sortBy { it.accepteds }
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.list_user,
             parent, false

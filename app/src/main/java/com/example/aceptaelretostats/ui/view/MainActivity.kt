@@ -34,8 +34,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         thread {
             while (true) {
                 try {
-                    Thread.sleep(50000)
-                    println("funciono")
+                    Thread.sleep(60000)
                     statsViewModel.onCreate()
                 } catch (err: Exception) {
                     err.printStackTrace()

@@ -50,7 +50,9 @@ class UsersFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-
+                if (newText != null) {
+                    statsViewModel.getUsersFilteredBy(newText)
+                }
                 return false
             }
 
