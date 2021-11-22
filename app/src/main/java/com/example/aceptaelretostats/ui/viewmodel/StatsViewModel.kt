@@ -33,6 +33,7 @@ class StatsViewModel : ViewModel() {
     fun getUsersFilteredBy(query: String) {
         viewModelScope.launch {
             filteredUsers.clear()
+            statsModel.value?.users = filteredUsers
             isLoading.postValue(true)
             var result = getStatsUseCase()
             if (result != null) {

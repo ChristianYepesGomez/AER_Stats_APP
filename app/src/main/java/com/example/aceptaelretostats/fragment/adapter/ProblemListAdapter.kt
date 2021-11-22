@@ -14,7 +14,7 @@ class ProblemListAdapter(private var problems: MutableList<Problems>) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-
+        problems.sortByDescending { it.accepteds.toInt() }
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.list_problems,
             parent, false
@@ -25,7 +25,7 @@ class ProblemListAdapter(private var problems: MutableList<Problems>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = problems[position]
         holder.campoAccepteds.text = currentItem.accepteds
-        holder.campoId.text = currentItem.id
+        holder.campoId.text = "Nº: ".plus(currentItem.id)
         holder.campoNombreProblema.text = currentItem.name
     }
 

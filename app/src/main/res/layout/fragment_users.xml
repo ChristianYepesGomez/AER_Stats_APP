@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:textCursorDrawable="@null"
                 android:visibility="gone"
-                app:iconifiedByDefault="true"
+                app:iconifiedByDefault="false"
                 app:queryBackground="@null"
                 app:queryHint="¿Buscas un usuario?" />
 

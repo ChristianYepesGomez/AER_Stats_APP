@@ -26,11 +26,13 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_institutions.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/fragment_intitutions.xml" value="0.12083333333333333" />
-        <entry key="app/src/main/res/layout/fragment_problems.xml" value="0.1703125" />
+        <entry key="app/src/main/res/layout/fragment_problems.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_users.xml" value="0.165" />
         <entry key="app/src/main/res/layout/list_institutions.xml" value="0.1703125" />
         <entry key="app/src/main/res/layout/list_user.xml" value="0.375" />
+        <entry key="app/src/main/res/menu/bottom_app_bar.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/menu/menu_top_bar.xml" value="0.23958333333333334" />
+        <entry key="app/src/main/res/menu/search_barr.xml" value="0.24166666666666667" />
         <entry key="app/src/main/res/menu/top_app_bar.xml" value="0.5" />
       </map>
     </option>
