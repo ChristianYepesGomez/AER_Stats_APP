@@ -30,7 +30,7 @@
 
         <!--text view for displaying currency name-->
         <TextView
-            android:id="@+id/id_institution"
+            android:id="@+id/id_accepteds_totales"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/id_user_name"

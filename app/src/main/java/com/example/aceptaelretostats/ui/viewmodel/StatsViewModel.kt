@@ -34,7 +34,7 @@ class StatsViewModel : ViewModel() {
         viewModelScope.launch {
             filteredUsers.clear()
             statsModel.value?.users = filteredUsers
-            isLoading.postValue(true)
+
             var result = getStatsUseCase()
             if (result != null) {
                 for (user in result.users) {
@@ -51,7 +51,7 @@ class StatsViewModel : ViewModel() {
             }
 
             statsModel.postValue(result!!)
-            isLoading.postValue(false)
+
 
         }
     }
@@ -59,7 +59,7 @@ class StatsViewModel : ViewModel() {
     fun getInstitutionsFilteredBy(query: String) {
         viewModelScope.launch {
             filteredInstitutions.clear()
-            isLoading.postValue(true)
+
             var result = getStatsUseCase()
             if (result != null) {
                 for (institution in result.institution) {
@@ -76,7 +76,6 @@ class StatsViewModel : ViewModel() {
             }
 
             statsModel.postValue(result!!)
-            isLoading.postValue(false)
 
         }
     }
@@ -84,7 +83,7 @@ class StatsViewModel : ViewModel() {
     fun getProblemsFilteredBy(query: String) {
         viewModelScope.launch {
             filteredProblems.clear()
-            isLoading.postValue(true)
+
             var result = getStatsUseCase()
             if (result != null) {
 
@@ -101,7 +100,7 @@ class StatsViewModel : ViewModel() {
             }
 
             statsModel.postValue(result!!)
-            isLoading.postValue(false)
+            
 
         }
     }

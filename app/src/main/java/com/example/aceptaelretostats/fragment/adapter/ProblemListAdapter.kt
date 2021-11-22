@@ -24,7 +24,7 @@ class ProblemListAdapter(private var problems: MutableList<Problems>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = problems[position]
-        holder.campoAccepteds.text = currentItem.accepteds
+        holder.campoAccepteds.text = "Total AC: ".plus(currentItem.accepteds)
         holder.campoId.text = "Nº: ".plus(currentItem.id)
         holder.campoNombreProblema.text = currentItem.name
     }

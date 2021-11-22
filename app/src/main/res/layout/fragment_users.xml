@@ -37,14 +37,16 @@
                 android:layout_below="@id/id_buscar_usuarios"
                 tools:listitem="@layout/list_user" />
 
-            <ProgressBar
-                android:id="@+id/loading"
-                android:layout_width="match_parent"
-                android:layout_height="157dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+
         </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="157dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/looking_for_button_users"

@@ -28,7 +28,7 @@ class UserListAdapter(private var userList: MutableList<Users>) :
         val currentItem = userList[position]
         holder.campoAccepteds.text =
             currentItem.resolved.plus("/".plus(currentItem.intents.plus(" AC")))
-        holder.campoInstitucion.text = currentItem.resolved
+        holder.campoID.text = "ID:".plus(currentItem.id)
         holder.campoNombreUsuario.text = currentItem.nick
     }
 
@@ -39,7 +39,7 @@ class UserListAdapter(private var userList: MutableList<Users>) :
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val campoNombreUsuario: TextView = itemView.findViewById(R.id.id_user_name)
-        val campoInstitucion: TextView = itemView.findViewById(R.id.id_institution)
+        val campoID: TextView = itemView.findViewById(R.id.id_accepteds_totales)
         val campoAccepteds: TextView = itemView.findViewById(R.id.id_accepteds)
     }
 
