@@ -9,11 +9,12 @@ import com.example.aceptaelretostats.R
 import com.example.aceptaelretostats.model.Problems
 
 
-class ProblemListAdapter(private var problems: List<Problems>) :
+class ProblemListAdapter(private var problems: MutableList<Problems>) :
     RecyclerView.Adapter<ProblemListAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.list_problems,
             parent, false

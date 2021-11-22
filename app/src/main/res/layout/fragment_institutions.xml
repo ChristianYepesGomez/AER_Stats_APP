@@ -2,16 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout_2"
+    android:id="@+id/relativeLayout_3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.InstitutionsFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -21,8 +23,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textCursorDrawable="@null"
+                android:visibility="gone"
                 app:iconifiedByDefault="true"
                 app:queryBackground="@null"
+
                 app:queryHint="¿Buscas una institución?" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -41,5 +45,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/looking_for_button_institutions"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@+id/linearLayout3"
+            app:layout_anchorGravity="bottom|center"
+            app:srcCompat="@drawable/ic_baseline_search_24" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

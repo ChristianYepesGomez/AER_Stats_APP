@@ -61,6 +61,16 @@ class ProblemsFragment : Fragment() {
 
         })
 
+        binding.lookingForButtonProblems.setOnClickListener {
+            if (binding.idBuscarProblemas.isVisible) {
+                binding.idBuscarProblemas.visibility = View.GONE
+            } else {
+                binding.idBuscarProblemas.visibility = View.VISIBLE
+                binding.idBuscarProblemas.requestFocus()
+                binding.idBuscarProblemas.setIconifiedByDefault(false)
+            }
+        }
+
         statsViewModel.isLoading.observe(this, Observer {
             binding.loading.isVisible = it
         })

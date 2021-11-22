@@ -61,6 +61,16 @@ class InstitutionsFragment : Fragment() {
 
         })
 
+        binding.lookingForButtonInstitutions.setOnClickListener {
+            if (binding.idBuscarInstituciones.isVisible) {
+                binding.idBuscarInstituciones.visibility = View.GONE
+            } else {
+                binding.idBuscarInstituciones.visibility = View.VISIBLE
+                binding.idBuscarInstituciones.requestFocus()
+                binding.idBuscarInstituciones.setIconifiedByDefault(false)
+            }
+        }
+
         statsViewModel.isLoading.observe(this, Observer {
             binding.loading.isVisible = it
         })

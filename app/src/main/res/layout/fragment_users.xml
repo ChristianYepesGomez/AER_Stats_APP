@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayout_2"
+    android:id="@+id/relativeLayout_1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="10dp"
     tools:context=".fragment.UsersFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -24,7 +24,6 @@
                 android:layout_height="wrap_content"
                 android:textCursorDrawable="@null"
                 android:visibility="gone"
-                
                 app:iconifiedByDefault="true"
                 app:queryBackground="@null"
                 app:queryHint="¿Buscas un usuario?" />

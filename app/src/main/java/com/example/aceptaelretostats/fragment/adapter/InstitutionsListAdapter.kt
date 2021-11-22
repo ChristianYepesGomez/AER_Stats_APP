@@ -9,11 +9,12 @@ import com.example.aceptaelretostats.R
 import com.example.aceptaelretostats.model.Institutions
 
 
-class InstitutionsListAdapter(private var institutions: List<Institutions>) :
+class InstitutionsListAdapter(private var institutions: MutableList<Institutions>) :
     RecyclerView.Adapter<InstitutionsListAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        institutions.sortBy { it.institution }
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.list_institutions,
             parent, false

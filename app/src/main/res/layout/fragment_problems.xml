@@ -9,10 +9,12 @@
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator2"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -22,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textCursorDrawable="@null"
+                android:visibility="gone"
                 app:iconifiedByDefault="true"
                 app:queryBackground="@null"
                 app:queryHint="¿Buscas un problema?" />
@@ -42,5 +45,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/looking_for_button_problems"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@+id/linearLayout2"
+            app:layout_anchorGravity="bottom|center"
+            app:srcCompat="@drawable/ic_baseline_search_24" />
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>
