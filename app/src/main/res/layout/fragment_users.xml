@@ -13,6 +13,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -22,6 +23,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textCursorDrawable="@null"
+                android:visibility="gone"
+                
                 app:iconifiedByDefault="true"
                 app:queryBackground="@null"
                 app:queryHint="¿Buscas un usuario?" />
@@ -44,21 +47,16 @@
                 app:layout_constraintStart_toStartOf="parent" />
         </LinearLayout>
 
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/bottomAppBar"
-            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:menu="@menu/bottom_app_bar"
-            app:navigationIcon="@drawable/ic_list_24" />
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/looking_for_button_users"
             style="@style/Widget.MaterialComponents.FloatingActionButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_anchor="@id/bottomAppBar"
-            app:srcCompat="@drawable/ic_list_24" />
+            app:layout_anchor="@+id/linearLayout"
+            app:layout_anchorGravity="bottom|center"
+            app:srcCompat="@drawable/ic_baseline_search_24" />
+
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

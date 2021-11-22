@@ -58,6 +58,17 @@ class UsersFragment : Fragment() {
 
         })
 
+
+        binding.lookingForButtonUsers.setOnClickListener {
+            if (binding.idBuscarUsuarios.isVisible) {
+                binding.idBuscarUsuarios.visibility = View.GONE
+            } else {
+                binding.idBuscarUsuarios.visibility = View.VISIBLE
+                binding.idBuscarUsuarios.requestFocus()
+                binding.idBuscarUsuarios.setIconifiedByDefault(false)
+            }
+        }
+
         statsViewModel.isLoading.observe(this, Observer {
             binding.loading.isVisible = it
         })
