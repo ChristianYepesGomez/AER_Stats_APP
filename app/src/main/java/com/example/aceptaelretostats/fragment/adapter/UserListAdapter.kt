@@ -3,18 +3,15 @@ package com.example.aceptaelretostats.fragment.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aceptaelretostats.R
 import com.example.aceptaelretostats.model.Users
-import java.util.*
 
 
 class UserListAdapter(private var userList: MutableList<Users>) :
     RecyclerView.Adapter<UserListAdapter.MyViewHolder>() {
-
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         userList.sortByDescending { it.resolved.toInt() }
         val itemView = LayoutInflater.from(parent.context).inflate(

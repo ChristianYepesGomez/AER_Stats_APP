@@ -27,24 +27,20 @@ class UsersFragment : Fragment() {
 
     ): View? {
         _binding = FragmentUsersBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
         statsViewModel.onCreate()
 
-
+        //Observe to the liveData, can refresh the values from the recyclerview
         statsViewModel.statsModel.observe(this, Observer {
-
+            //Loop everytime the observer look any changue on the livedata
             binding.idUserList.apply {
-                // set a LinearLayoutManager to handle Android
-                // RecyclerView behavior
                 layoutManager = LinearLayoutManager(activity)
-                // set the custom adapter to the RecyclerView
-
                 adapter = UserListAdapter(it.users)
 
             }
 
         })
 
+        //Querylistener to the serchiew, handle what happens when type in the searchview
         binding.idBuscarUsuarios.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -60,7 +56,7 @@ class UsersFragment : Fragment() {
 
         })
 
-
+        //Button to hide/show the keyboard and searchview on click
         binding.lookingForButtonUsers.setOnClickListener {
             if (binding.idBuscarUsuarios.isVisible) {
                 binding.idBuscarUsuarios.visibility = View.GONE
@@ -78,6 +74,7 @@ class UsersFragment : Fragment() {
             }
         }
 
+        //Observer for the loading screen when data are still loading
         statsViewModel.isLoading.observe(this, Observer {
             binding.loading.isVisible = it
         })

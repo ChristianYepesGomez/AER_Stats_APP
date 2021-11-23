@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
         createTabs()
 
+        //loop for the call to the api every minute
         thread {
             while (true) {
                 try {
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
     }
 
+    //Creation the tabs to the main activity
     private fun createTabs() {
         tabLayout = binding.tabLayout
         viewPager2 = binding.viewPager2

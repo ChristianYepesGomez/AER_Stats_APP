@@ -1,6 +1,7 @@
 package com.example.aceptaelretostats.model
 
 
+//Custom data classes for the API data
 data class StatsModel(
     var users: MutableList<Users>,
     var problems: MutableList<Problems>,

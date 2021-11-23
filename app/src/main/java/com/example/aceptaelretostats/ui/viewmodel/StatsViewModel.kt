@@ -12,6 +12,8 @@ import kotlinx.coroutines.launch
 
 class StatsViewModel : ViewModel() {
 
+    //Stats view model to handle live data
+
     var statsModel = MutableLiveData<StatsModel>()
     var getStatsUseCase = GetStatsUseCase()
     val isLoading = MutableLiveData<Boolean>()

@@ -5,6 +5,7 @@ import com.example.aceptaelretostats.model.StatsProvider
 
 class StatsRepository {
 
+    //Respository for handle response from the api for the view model
     private val api = StatsService()
 
     suspend fun getAllStats(): StatsModel {

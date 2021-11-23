@@ -1,17 +1,14 @@
 package com.example.aceptaelretostats.fragment.adapter
 
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
-
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.Lifecycle
-
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.aceptaelretostats.fragment.InstitutionsFragment
 import com.example.aceptaelretostats.fragment.ProblemsFragment
 import com.example.aceptaelretostats.fragment.UsersFragment
+
+//Adapter view to handle the creation of the tabs to the mainAcitvity
 
 class ViewPageAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {

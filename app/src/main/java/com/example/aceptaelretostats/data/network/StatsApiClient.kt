@@ -7,11 +7,13 @@ import kotlinx.coroutines.withContext
 import retrofit2.Response
 import retrofit2.http.GET
 
+//function to calll the final part of the URL
 interface StatsApiClient {
     @GET("/.json")
     suspend fun getAllStats(): Response<StatsModel>
 }
 
+//Service for the response from the API
 class StatsService {
     private val retrofit = RetrofitHelper.getRetrofit()
 
