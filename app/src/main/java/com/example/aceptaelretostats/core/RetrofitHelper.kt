@@ -8,7 +8,7 @@ object RetrofitHelper {
     //Use of retrofit to call the API
     fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("http://ec2-13-38-34-187.eu-west-3.compute.amazonaws.com/")
+            .baseUrl("http://ec2-15-236-92-83.eu-west-3.compute.amazonaws.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
